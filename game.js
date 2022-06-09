@@ -21,7 +21,6 @@ function animatePress(currentColour) {
 
 $(document).keypress(function() {
   if (!isGamestarted) {
-    gamePattern = [];
     isGamestarted = true;
     level = 0;
     $('#level-title').text("Level 0");
@@ -49,6 +48,8 @@ function endGame() {
     $("body").removeClass("game-over")
   }, 100);
   isGamestarted = false;
+  gamePattern = [];
+  userClickedPattern =[];
   $('#level-title').text("Game over.Press Any Key to Start!");
 
 }
