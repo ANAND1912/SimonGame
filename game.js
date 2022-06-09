@@ -19,14 +19,20 @@ function animatePress(currentColour) {
 }
 
 
-$(document).keypress(function() {
+function startGame(){
   if (!isGamestarted) {
     isGamestarted = true;
     level = 0;
     $('#level-title').text("Level 0");
     nextSequence();
   }
-});
+}
+
+
+$(document).keypress(startGame);
+
+
+$('span').click(startGame);
 
 function nextSequence() {
   level++;
@@ -50,8 +56,8 @@ function endGame() {
   isGamestarted = false;
   gamePattern = [];
   userClickedPattern =[];
-  $('#level-title').text("Game over.Press Any Key to Start!");
-
+  $('#level-title').html("Game Over.Press A Key to Start or <span class = 'startSpan'>click here</span> to Start");
+  $('span').click(startGame);
 }
 
 
