@@ -21,6 +21,7 @@ function animatePress(currentColour) {
 
 $(document).keypress(function() {
   if (!isGamestarted) {
+    gamePattern = [];
     isGamestarted = true;
     level = 0;
     $('#level-title').text("Level 0");
